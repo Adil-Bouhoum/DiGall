@@ -5,8 +5,12 @@
 <head>
     <meta charset="UTF-8">
     <title>Blocs Login</title>
-    <link rel="stylesheet" href="HAHAH.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.0/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.18/dist/sweetalert2.all.min.js"></script>
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="HAHAH.css">
 </head>
 <body>
     <!-- NAVBAR CREATION -->
@@ -51,16 +55,16 @@
         </div>
         <div class="login-section">
             <div class="form-box login">
-                <form action="" onsubmit="handleLogin(event)">
+                <form action="Login_handling.php" method="POST">
                     <h2>Sign In</h2>
                     <div class="input-box">
                         <span class="icon"><i class='bx bxs-envelope'></i></span>
-                        <input type="email" id="login-email" required>
+                        <input type="email" id="login-email" name="login-email" required>
                         <label>Email</label>
                     </div>
                     <div class="input-box">
                         <span class="icon"><i class='bx bxs-lock-alt'></i></span>
-                        <input type="password" id="login-password" required>
+                        <input type="password" id="login-password" name="login-password" required>
                         <label>Password</label>
                         
                     </div>
@@ -71,7 +75,7 @@
                     <div class="remember-password">
                         <label><input type="checkbox" id="show-password-login"> Show Password</label>
                     </div>
-                    <button class="btn" type="submit">Login In</button>
+                    <button class="btn" type="submit" name="submit">Login In</button>
                     <div class="create-account">
                         <p>Create A New Account? <a href="#" class="register-link">Sign Up</a></p>
                     </div>
