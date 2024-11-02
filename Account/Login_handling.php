@@ -1,10 +1,11 @@
 <?php
-// Include database connection
 require '../connection/config.php';
+session_destroy();
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Blocs Login</title>
@@ -15,9 +16,11 @@ require '../connection/config.php';
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="HAHAH.css">
 </head>
+
 <body>
-    
+
 </body>
+
 </html>
 <?php
 // Check if the form was submitted
@@ -36,7 +39,7 @@ if (isset($_POST["submit"])) {
 
     // Execute query to find the user
     $result = mysqli_query($conn, "SELECT * FROM users WHERE username = '$usernameemail' OR email = '$usernameemail'");
-    
+
     if (!$result) {
         error_log("SQL query error: " . mysqli_error($conn));
         echo "Form submission failed. Please try again.";
@@ -51,6 +54,10 @@ if (isset($_POST["submit"])) {
             session_start();
             $_SESSION["login"] = true;
             $_SESSION["id"] = $row["id"];
+            $_SESSION["Username"] = $row["username"];
+            $_SESSION["email"] = $row["email"];
+            $_SESSION["firstname"] = $row["firstName"];
+            $_SESSION["lastname"] = $row["lastName"];
             header("Location: ../Alpha/index.php");
             exit;
         } else {
@@ -75,4 +82,3 @@ if (isset($_POST["submit"])) {
     }
 }
 ?>
-

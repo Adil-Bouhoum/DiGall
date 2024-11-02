@@ -1,0 +1,30 @@
+
+:root{
+    --secc-purple: #e635f3;
+    --mainn-purple: #722a75;
+    --thirdd-purple: #bc43c1;
+    --mainn-white: #d6d6d6;
+    --mainn-blue: #457bc1;
+    --subb-blue:#7eadea;
+    --mainn-dark:rgb(22,20,34);
+    --subb-dark: rgb(42, 38, 65);
+    --mainn-gray:rgb(96, 96, 97);
+    --secc-gray:rgb(159, 159, 165);
+    --raree-gold:rgb(234, 209, 47);
+ }
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+ }
+
+ body{
+    background-color: var(--mainn-dark);
+ }
+
+ .custom-navbar {
+    background-color: var(--mainn-dark);
+    color: var(--mainn-white);
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.5);
+}
+
