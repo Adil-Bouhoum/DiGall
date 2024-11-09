@@ -24,7 +24,7 @@ require '../connection/config.php';
         /* Side nav styling */
         .side-nav {
             width: 90px;
-            background-color: #2a2a2a;
+            background-color: #18042c;
             position: fixed;
             height: 100vh;
             top: 0;
@@ -100,6 +100,7 @@ require '../connection/config.php';
             padding: 20px;
             color: #888;
         }
+        
     </style>
 </head>
 
@@ -107,6 +108,8 @@ require '../connection/config.php';
 
     <!-- Side Nav -->
     <div class="side-nav">
+        <a href="" class=""><i class=""></i></a>
+        <a href="" class=""><i class=""></i></a>
         <a href="#" class="btn btn-outline-primary"><i class="fas fa-home"></i></a>
         <a href="#" class="btn btn-outline-primary"><i class="fas fa-bolt"></i></a>
         <a href="#" class="btn btn-outline-primary"><i class="fas fa-palette"></i></a>
@@ -116,7 +119,7 @@ require '../connection/config.php';
     </div>
 
     <!-- Main content -->
-    <div class="main-content">
+    <div class="container-fluid px-0">
         <?php include 'Components/navbar.php'; ?>
 
         <div class="container mt-3 category-tabs">
