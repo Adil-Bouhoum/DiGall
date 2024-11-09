@@ -24,10 +24,12 @@ $profileImagePath = $baseURL . $profilePictureUrl;
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>User Profile</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="../node_modules/bootswatch/dist/vapor/bootstrap.min.css">
+    <title>Document</title>
 </head>
-<body>
 
 <?php include "Components/navbar.php"; ?>
 
@@ -51,13 +53,14 @@ $profileImagePath = $baseURL . $profilePictureUrl;
             <p><strong>Date of Birth:</strong> <?php echo htmlspecialchars($dateOfBirth); ?></p>
         </div>
         <div class="card-footer text-center">
-            <a href="edit_profile.php" class="btn btn-outline-primary me-2">Modify Profile</a>
-            <a href="change_password.php" class="btn btn-outline-secondary">Change Password</a>
+            <a href="../Account/Edit_profile.php" class="btn btn-outline-primary me-2">Modify Profile</a>
+            <a href="../Account/Change_password.php" class="btn btn-outline-secondary">Change Password</a>
+            <a href="../Account/Logout.php" class="btn btn-outline-dark">Logout from Account</a>
         </div>
+        
     </div>
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
 </body>
 </html>

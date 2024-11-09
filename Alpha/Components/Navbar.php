@@ -1,17 +1,38 @@
-<nav class="navbar navbar-expand-lg custom-navbar navbar-light">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="http://localhost/P_Alpha/Alpha/index.php">My Website</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav me-auto">
-                <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">Features</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">Pricing</a></li>
-            </ul>
+<nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">DiGal</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarColor01">
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item">
+          <a class="nav-link active" href="index.php">Home
+            <span class="visually-hidden">(current)</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Art Gallery</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Song Gallery</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Shop</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="#">Action</a>
+            <a class="dropdown-item" href="#">Another action</a>
+            <a class="dropdown-item" href="#">Something else here</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">Separated link</a>
+          </div>
+        </li>
+      </ul>
 
-            <?php if (isset($_SESSION['id'])): ?>
+      <?php if (isset($_SESSION['id'])): ?>
                 <?php 
                     $userId = $_SESSION['id'];
                     $username = $_SESSION['Username'];
@@ -26,32 +47,45 @@
                     $profileImagePath = $baseURL . $profileImage;
 
                 ?>
-                <!-- Profile dropdown if user is logged in -->
-                <div class="dropdown ms-auto">
-                    <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" id="profileDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    <img class="img-profile rounded-circle" src="<?php echo htmlspecialchars( $profileImagePath); ?>" alt="Profile" />
-                    </a>
-                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="profileDropdown">
-                        <li><a class="dropdown-item" href="profile.php"><?php echo htmlspecialchars($username); ?></a></li>
-                        <li><a class="dropdown-item" href="../Account/Logout.php">Logout</a></li>
-                    </ul>
-                </div>
-            <?php else: ?>
+
+
+      <!-- Profile Handeling Nav -->
+      <ul class="navbar-nav">
+        <li class="nav-item dropdown ms-auto d-flex align-items-center">
+            <a class="nav-link d-flex align-items-center" href="#" id="profileDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <!-- Use Bootstrap's 'object-fit' to maintain aspect ratio and 'rounded-circle' for a circular image -->
+                <img class="rounded-circle" src="<?php echo htmlspecialchars($profileImagePath); ?>" alt="Profile" style="width: 40px; height: 40px; object-fit: cover;">
+                <span class="ms-2"><?php echo htmlspecialchars($username); ?></span> <!-- Display username next to the image -->
+            </a>
+            <div class="dropdown-menu">
+                <a class="dropdown-item text-primary-emphasis" href="profile.php" style="font-size : 22px;"><?php echo htmlspecialchars($username); ?></a>
+                <a class="dropdown-item" href="../Account/Logout.php">Logout</a>
+            </div>
+    </li>
+    <li class="nav-item">
+        <form class="d-flex ms-3 ">
+            <input class="form-control me-sm-2" type="search" placeholder="Search">
+            <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+        </form>
+    </li>
+</ul>
+    
+
+    <?php else: ?>
                 <!-- Login and Signup links if no session is active -->
-                <ul class="navbar-nav ms-auto">
+                <ul class="navbar-nav ms-auto" >
                     <li class="nav-item"><a class="nav-link" href="../Account/Login_v2.php">Login</a></li>
                     <li class="nav-item"><a class="nav-link" href="../Account/Login_v2.php">Signup</a></li>
+                    <li class="nav-item">
+                        <form class="d-flex">
+                            <input class="form-control me-sm-2" type="search" placeholder="Search">
+                            <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+                        </form>   
+                    </li>
                 </ul>
             <?php endif; ?>
-        </div>
+            
+            
     </div>
+  </div>
 </nav>
-
-<style>
-    /* Adjust the profile image size */
-    .img-profile {
-        width: 40px;
-        height: 40px;
-        object-fit: cover;
-    }
-</style>
